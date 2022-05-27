@@ -4,6 +4,12 @@ package com.kjy.quizapp
 // 사용자 이름, 퀴즈에 사용할 질문, 정답
 object Constants {
 
+
+    //필요한 변수를 만들고 정보 값을 다른 액티비티로 보낼 때 항상 constant 하위에 원하는 세부 사항을 입력해두는 것이 좋음.
+    const val USER_NAME: String = "user_name"
+    const val TOTAL_QUESTIONS: String = "total_questions"
+    const val CORRECT_ANSWERS: String = "correct_answers"
+
     fun getQuestions():ArrayList<Question>{
         val questionsList = ArrayList<Question>()
 

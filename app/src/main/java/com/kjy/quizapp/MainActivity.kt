@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +24,11 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter your name", Toast.LENGTH_LONG).show()
             }else{
                 val intent = Intent(this, QuizQuestionsActivity::class.java)
+                // intent로 추가적인 정보값을 한 액티비티에서 다른 액티비티로 보냄.
+                // 문자열을 가지고 와야하기 때문에 toString()
+                intent.putExtra(Constants.USER_NAME, etName.text.toString())
                 startActivity(intent)
+                finish()
             }
 
         }
